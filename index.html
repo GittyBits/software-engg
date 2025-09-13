@@ -3,12 +3,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Software Engg</title>
   <link rel="stylesheet" href="https://stackedit.io/style.css">
-  <script defer data-domain="https://software-enggin.vercel.app/" src="https://plausible.io/js/script.js"></script>
-	<script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
-
 </head>
 
 <body class="stackedit">
@@ -400,7 +394,494 @@ Example: If we are in the design stage, we cannot accept a new requirement.</li>
 <li>Higher cost.</li>
 <li>Not suitable for small projects.</li>
 </ul>
+<hr>
 <h3 id="unit---2">Unit - 2</h3>
+<h4 id="q.-what-is-a-software-requirement-specification-srs-what-does-it-include">Q. <strong>What is a Software Requirement Specification (SRS)? What does it include?</strong></h4>
+<ul>
+<li>SRS is a document that defines all the requirements of a software system.</li>
+<li>Abilities and features of the product</li>
+<li>References of past similar models</li>
+</ul>
+<hr>
+<h4 id="q.-explain-the-characteristics-of-srs">Q. Explain the characteristics of SRS</h4>
+<ol>
+<li>Correctness
+<ul>
+<li>Requirements should be accurate. No misleading information.</li>
+</ul>
+</li>
+<li>Completeness
+<ul>
+<li>Covers all the minute details such as functionality, performance, design, interface.</li>
+</ul>
+</li>
+<li>Consistency
+<ul>
+<li>No conflicting requirements.</li>
+<li>All requirements should be grouped in one place.</li>
+<li>Example: P1 requires “A” but P2 requires “¬A” → conflict.</li>
+</ul>
+</li>
+<li>Unambiguity
+<ul>
+<li>Sentences should have only one interpretation.</li>
+</ul>
+</li>
+<li>Ranking for Importance and Stability
+<ul>
+<li>Giving different priority to different requirement.</li>
+</ul>
+</li>
+<li>Modifiability
+<ul>
+<li>Open to future changes.</li>
+<li>Easy to insert, delete, or modify requirements.</li>
+</ul>
+</li>
+<li>Verifiability
+<ul>
+<li>Cost, feasibility, etc., must be checkable.</li>
+</ul>
+</li>
+<li>Traceability
+<ul>
+<li>Origin of requirements can be traced.</li>
+<li>Backward traceability → references used.</li>
+<li>Forward traceability → possibility of future scope, maintenance.</li>
+</ul>
+</li>
+<li>Design Independence
+<ul>
+<li>Multiple alternative backup for system.</li>
+</ul>
+</li>
+<li>Understandability by Customer
+<ul>
+<li>Written in simple, clear language.</li>
+<li>Should avoid unnecessary technical jargon.</li>
+</ul>
+</li>
+<li>Testability
+<ul>
+<li>Each requirement should be testable.</li>
+<li>Example: “response time &lt; 2 sec” is testable; vague terms like “fast” are not.</li>
+</ul>
+</li>
+<li>Right Level of Abstraction
+<ul>
+<li>Should focus on what is required, not design or implementation details.</li>
+</ul>
+</li>
+<li>Conformity to Standards
+<ul>
+<li>Should follow IEEE standards.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="activity-diagram">Activity Diagram</h4>
+<p><img src="https://i.ibb.co/Q7rN9Zr1/image.png" alt="enter image description here"></p>
+<hr>
+<h4 id="swimlane-diagram">Swimlane diagram</h4>
+<p><img src="https://i.ibb.co/HTjTCLSf/image.png" alt="enter image description here"></p>
+<ul>
+<li>Used for repeatable/common tasks in activity diagrams.</li>
+<li>Example: In an ATM process, the functionality of inserting a card and requesting approval is common whether we:
+<ul>
+<li>Withdraw money</li>
+<li>Check balance</li>
+<li>Deposit cash<br>
+-so we only draw it once</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="q.-draw-a-class-diagram-for-an-atm-system.-explain-its-main-classes-attributes-methods-and-relationships.">Q. Draw a class diagram for an ATM system. Explain its main classes, attributes, methods, and relationships.</h4>
+<ul>
+<li>Class Diagram uses concepts similar to classes in OOPS.</li>
+<li>Shows attributes, methods, and relationships between entities.</li>
+</ul>
+<h4 id="main-classes">Main Classes</h4>
+<ol>
+<li>Bank
+<ul>
+<li>Attributes: code, address</li>
+<li>Methods: manage(), maintain()</li>
+<li>Relationship: maintains ATM, has customers</li>
+</ul>
+</li>
+<li>ATM
+<ul>
+<li>Attributes: location, status</li>
+<li>Methods: identifyTransaction(), carryoutTransaction()</li>
+<li>Relationship: managed by bank, identifies ATM transaction<br>
+<img src="https://i.ibb.co/8nY0WTHN/image.png" alt="enter image description here"></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>Dashed arrows → represent inheritance.</li>
+<li>Associations should be clearly written under class diagram.</li>
+</ul>
+<p>Examples of Associations:</p>
+<ul>
+<li>Bank → maintains → ATM</li>
+<li>ATM Transaction → updates → Account</li>
+<li>Customer → owns → Account</li>
+</ul>
+<hr>
+<h4 id="q.-explain-data-flow-diagrams-dfd.-draw-level-0-and-level-1-dfd-for-an-atm-system.">Q. Explain Data Flow Diagrams (DFD). Draw level 0 and level 1 DFD for an ATM system.</h4>
+<ul>
+<li>DFD is a <strong>pictorial diagram</strong> showing the flow of data between processes and entities.</li>
+<li>Levels:
+<ul>
+<li>Level 0 (Context Diagram / High Level)</li>
+<li>Level 1</li>
+<li>Level 2</li>
+</ul>
+</li>
+</ul>
+<h4 id="symbols">Symbols</h4>
+<ul>
+<li>Process: ○ (circle)</li>
+<li>Entity: ▭ (rectangle)</li>
+<li>Data Store: = = =</li>
+<li>Flow lines: →</li>
+</ul>
+<h3 id="level-0-dfd-context-diagram">Level 0 DFD (Context Diagram)</h3>
+<ul>
+<li>Shows only <strong>one main process</strong> and its interaction with entities.</li>
+<li>Example (ATM system):
+<ul>
+<li>Entities: Customer, Bank</li>
+<li>Process: ATM</li>
+<li>Customer ↔ ATM ↔ Bank</li>
+</ul>
+</li>
+</ul>
+<p>This highlights only the <strong>main functions</strong> of the software.<br>
+<img src="https://i.ibb.co/YB9vBxxq/image.png" alt="enter image description here"></p>
+<h3 id="level-1-dfd">Level 1 DFD</h3>
+<ul>
+<li>More detailed than Level 0.</li>
+<li>ATM system broken into sub-processes (P1, P2, P3, …).</li>
+</ul>
+<p><img src="https://i.ibb.co/CZh54s9/image.png" alt="enter image description here"></p>
+<h3 id="level-2-dfd">Level 2 DFD</h3>
+<p><img src="https://i.ibb.co/cKsL5Pj3/image.png" alt="enter image description here"></p>
+<hr>
+<h4 id="q.-what-is-requirement-engineering-explain-functional-and-non-functional-requirements">Q. What is Requirement Engineering? Explain functional and non-functional requirements</h4>
+<ul>
+<li>Crucial phase in SDLC.</li>
+<li>Involves analyzing, documenting, and managing the requirements of a system.</li>
+<li>Ensures project success by:
+<ul>
+<li>Establishing a solid foundation</li>
+<li>Enhancing communication</li>
+<li>Reducing risks</li>
+<li>Improving final product quality</li>
+</ul>
+</li>
+</ul>
+<h4 id="types-of-requirements">Types of Requirements</h4>
+<ol>
+<li>
+<p>Functional Requirements</p>
+<ul>
+<li>Define what the system should do.</li>
+<li>Like a roadmap or to-do list for developers.</li>
+<li>Examples:
+<ul>
+<li>Messaging app: add friends, send messages.</li>
+</ul>
+</li>
+<li>Includes:
+<ul>
+<li>Features, capabilities, and functions</li>
+<li>User input/output</li>
+<li>Rules, logic</li>
+<li>Scalability, error handling, interfaces</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Non-Functional Requirements</p>
+<ul>
+<li>Define how the system should perform (behind-the-scenes rules).</li>
+<li>Characteristics:
+<ul>
+<li>Quality standards</li>
+<li>Performance</li>
+<li>Reliability</li>
+<li>Availability</li>
+<li>Maintainability</li>
+<li>Recoverability</li>
+<li>Capacity</li>
+<li>Scalability</li>
+<li>Security</li>
+<li>Manageability</li>
+<li>Environmental factors</li>
+<li>Data integrity</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="q.-what-are-the-phases-of-software-requirement-engineering">Q. What are the phases of software requirement engineering?</h4>
+<ol>
+<li>
+<p>Inception (Understanding the problem)</p>
+<ul>
+<li>Engineers ask questions to establish software objectives.</li>
+<li>Collaboration between customer and developer.</li>
+<li>Defines overall scope.</li>
+</ul>
+</li>
+<li>
+<p>Elicitation (Clear understanding)</p>
+<ul>
+<li>Gathering requirements from stakeholders.</li>
+<li>Challenges:
+<ul>
+<li>Problem of scope (too technical, unclear goals)</li>
+<li>Problem of understanding (customer ↔ developer gap)</li>
+<li>Problem of volatility (requirements keep changing)</li>
+</ul>
+</li>
+<li>Techniques:
+<ul>
+<li>Interviews, questionnaires, brainstorming, observation, prototyping, document review</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Elaboration (Refinement)</p>
+<ul>
+<li>Expand and refine requirements gathered.</li>
+<li>Develops analysis models using functional features and constraints.</li>
+</ul>
+</li>
+<li>
+<p>Negotiation (Conflicts &amp; settlements)</p>
+<ul>
+<li>Decide project scope with limited resources.</li>
+<li>Prioritize requirements, resolve conflicts.</li>
+</ul>
+</li>
+<li>
+<p>Specification</p>
+<ul>
+<li>Prepare SRS document.</li>
+</ul>
+</li>
+<li>
+<p>Validation</p>
+<ul>
+<li>Check for errors, missing info, additional requirements.</li>
+<li>Verify requirements against customer needs.</li>
+</ul>
+</li>
+<li>
+<p>Requirement Management</p>
+<ul>
+<li>Continuous process of identifying, controlling, tracking requirements.</li>
+<li>Ensures smooth implementation.</li>
+<li>Handles new/additional requirements and checks impact on system.</li>
+</ul>
+</li>
+</ol>
+<h4 id="requirement-engineering-phases--">Requirement engineering phases :-</h4>
+<p><img src="https://i.ibb.co/YFR5TqSW/image.png" alt="enter image description here"></p>
+<hr>
+<h4 id="q.-what-is-the-cocomo-model-explain-its-types-with-respect-to-project-size.">Q. What is the COCOMO Model? Explain its types with respect to project size.</h4>
+<ul>
+<li>Stands for Constructive Cost Model</li>
+<li>Performs cost estimation based on KLOC (Kilo Lines of Code).</li>
+<li>Estimates the cost of a software development project using empirical data and mathematical formulas.</li>
+</ul>
+<h4 id="types-of-cocomo">Types of COCOMO</h4>
+<ol>
+<li>Organic
+<ul>
+<li>Small projects.</li>
+<li>KLOC range: 0–50 KLOC.</li>
+<li>Example: Simple business systems, academic projects.</li>
+</ul>
+</li>
+<li>Semi-detached
+<ul>
+<li>Medium projects.</li>
+<li>KLOC range: 50–300 KLOC.</li>
+<li>Example: More complex systems with mixed experience teams.</li>
+</ul>
+</li>
+<li>Embedded
+<ul>
+<li>Large projects.</li>
+<li>KLOC: above 300 KLOC (with upper limits depending on system).</li>
+<li>Example: Real-time systems, defense, aerospace.</li>
+</ul>
+</li>
+</ol>
+<h4 id="q.-what-are-the-key-benefits-of-the-cocomo-model">Q. What are the key benefits of the COCOMO Model?</h4>
+<ol>
+<li>Improves Project Planning
+<ul>
+<li>Provides a clear estimate of resources and project timelines.</li>
+<li>Helps in meeting deadlines effectively.</li>
+</ul>
+</li>
+<li>Facilitates Risk Management
+<ul>
+<li>Predicts cost estimates and delays in project development.</li>
+<li>Helps in managing risks early and planning for future challenges.</li>
+</ul>
+</li>
+<li>Enhanced Resource Management
+<ul>
+<li>Guides allocation of the right amount of resources at the right time.</li>
+<li>Optimizes data usage and improves work efficiency.</li>
+</ul>
+</li>
+<li>Benchmarking
+<ul>
+<li>Allows comparison of various software projects with industry standards.</li>
+<li>Acts as a benchmark for productivity and quality.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="effort-equations">Effort Equations</h3>
+<p>For different project types:</p>
+<ul>
+<li><strong>Organic</strong><br>
+<span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mo>=</mo><mn>2.4</mn><mo>×</mo><mo stretchy="false">(</mo><mn>400</mn><msup><mo stretchy="false">)</mo><mn>1.05</mn></msup></mrow><annotation encoding="application/x-tex">
+E = 2.4 \times (400)^{1.05}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathnormal" style="margin-right: 0.05764em;">E</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.72777em; vertical-align: -0.08333em;"></span><span class="mord">2.4</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 1.11411em; vertical-align: -0.25em;"></span><span class="mopen">(</span><span class="mord">400</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.864108em;"><span class="" style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1.05</span></span></span></span></span></span></span></span></span></span></span></span></span></span></li>
+<li><strong>Semi-detached</strong></li>
+</ul>
+<p><span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mo>=</mo><mn>3.0</mn><mo>×</mo><mo stretchy="false">(</mo><mn>400</mn><msup><mo stretchy="false">)</mo><mn>1.12</mn></msup></mrow><annotation encoding="application/x-tex">
+E = 3.0 \times (400)^{1.12}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathnormal" style="margin-right: 0.05764em;">E</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.72777em; vertical-align: -0.08333em;"></span><span class="mord">3.0</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 1.11411em; vertical-align: -0.25em;"></span><span class="mopen">(</span><span class="mord">400</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.864108em;"><span class="" style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1.12</span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<ul>
+<li><strong>Embedded</strong><br>
+<span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mo>=</mo><mn>3.6</mn><mo>×</mo><mo stretchy="false">(</mo><mn>400</mn><msup><mo stretchy="false">)</mo><mn>1.20</mn></msup></mrow><annotation encoding="application/x-tex">
+E = 3.6 \times (400)^{1.20}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathnormal" style="margin-right: 0.05764em;">E</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.72777em; vertical-align: -0.08333em;"></span><span class="mord">3.6</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 1.11411em; vertical-align: -0.25em;"></span><span class="mopen">(</span><span class="mord">400</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.864108em;"><span class="" style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1.20</span></span></span></span></span></span></span></span></span></span></span></span></span></span></li>
+<li>Time (Tdev) = 2.5 × (Effort)^d</li>
+<li>Unit of Effort = Person-Months (PM)</li>
+<li>Unit of Tdev = Months (M)</li>
+<li>Team size = Effort / Tdev</li>
+</ul>
+<h4 id="coefficients-for-project-types">Coefficients for Project Types</h4>
+
+<table>
+<thead>
+<tr>
+<th>Project Type</th>
+<th>d</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Organic</td>
+<td>0.38</td>
+</tr>
+<tr>
+<td>Semi-detached</td>
+<td>0.35</td>
+</tr>
+<tr>
+<td>Embedded</td>
+<td>0.32</td>
+</tr>
+</tbody>
+</table><hr>
+<h3 id="numerical---1">Numerical - 1</h3>
+<p>Q.  A 60 KLOC semi-detached project has a base effort of 294.21 PM. Compare 2 teams:</p>
+<ul>
+<li>
+<p>Team A with EAF = 0.9</p>
+</li>
+<li>
+<p>Team B with EAF = 1.1</p>
+</li>
+</ul>
+<p>For both teams, calculate adjusted effort, development time, and average staff. Conclude which team finishes earlier.</p>
+<h2 id="section-1"></h2>
+<h4 id="step-1-base-effort-semi-detached-60-kloc">Step 1: Base Effort (Semi-detached, 60 KLOC)</h4>
+<p><span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mo>=</mo><mn>3.0</mn><mo>×</mo><mo stretchy="false">(</mo><mn>60</mn><msup><mo stretchy="false">)</mo><mn>1.12</mn></msup><mo>=</mo><mn>294.21</mn> <mi>P</mi><mi>M</mi></mrow><annotation encoding="application/x-tex">
+E = 3.0 \times (60)^{1.12} = 294.21 \, PM
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathnormal" style="margin-right: 0.05764em;">E</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.72777em; vertical-align: -0.08333em;"></span><span class="mord">3.0</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 1.11411em; vertical-align: -0.25em;"></span><span class="mopen">(</span><span class="mord">60</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.864108em;"><span class="" style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1.12</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord">294.21</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathnormal" style="margin-right: 0.10903em;">PM</span></span></span></span></span></span></p>
+<h4 id="step-2-team-a-eaf--0.9">Step 2: Team A (EAF = 0.9)</h4>
+<p>Adjusted Effort:</p>
+<p><span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>E</mi><mi>A</mi></msub><mo>=</mo><mn>294.21</mn><mo>×</mo><mn>0.9</mn><mo>=</mo><mn>264.79</mn> <mi>P</mi><mi>M</mi></mrow><annotation encoding="application/x-tex">
+E_A = 294.21 \times 0.9 = 264.79 \, PM
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.83333em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.328331em;"><span class="" style="top: -2.55em; margin-left: -0.05764em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.72777em; vertical-align: -0.08333em;"></span><span class="mord">294.21</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">0.9</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord">264.79</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathnormal" style="margin-right: 0.10903em;">PM</span></span></span></span></span></span></p>
+<p>Development Time:</p>
+<p><span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>T</mi><mrow><mi>d</mi><mi>e</mi><mi>v</mi><mi>A</mi></mrow></msub><mo>=</mo><mn>2.5</mn><mo>×</mo><mo stretchy="false">(</mo><mn>264.79</mn><msup><mo stretchy="false">)</mo><mn>0.35</mn></msup><mo>=</mo><mn>17.62</mn> <mi>M</mi></mrow><annotation encoding="application/x-tex">
+T_{devA} = 2.5 \times (264.79)^{0.35} = 17.62 \, M
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.83333em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.336108em;"><span class="" style="top: -2.55em; margin-left: -0.13889em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">d</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight" style="margin-right: 0.03588em;">v</span><span class="mord mathnormal mtight">A</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.72777em; vertical-align: -0.08333em;"></span><span class="mord">2.5</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 1.11411em; vertical-align: -0.25em;"></span><span class="mopen">(</span><span class="mord">264.79</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.864108em;"><span class="" style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.35</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord">17.62</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathnormal" style="margin-right: 0.10903em;">M</span></span></span></span></span></span></p>
+<p>Average Staff:</p>
+<p><span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>S</mi><mi>t</mi><mi>a</mi><mi>f</mi><msub><mi>f</mi><mi>A</mi></msub><mo>=</mo><mfrac><mn>264.79</mn><mn>17.62</mn></mfrac><mo>≈</mo><mn>15</mn> <mi>p</mi><mi>e</mi><mi>r</mi><mi>s</mi><mi>o</mi><mi>n</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">
+Staff_A = \frac{264.79}{17.62} \approx 15 \, persons
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.88888em; vertical-align: -0.19444em;"></span><span class="mord mathnormal">St</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right: 0.10764em;">f</span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.328331em;"><span class="" style="top: -2.55em; margin-left: -0.10764em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 2.00744em; vertical-align: -0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 1.32144em;"><span class="" style="top: -2.314em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord">17.62</span></span></span><span class="" style="top: -3.23em;"><span class="pstrut" style="height: 3em;"></span><span class="frac-line" style="border-bottom-width: 0.04em;"></span></span><span class="" style="top: -3.677em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord">264.79</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.686em;"><span class=""></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.83888em; vertical-align: -0.19444em;"></span><span class="mord">15</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">erso</span><span class="mord mathnormal">n</span><span class="mord mathnormal">s</span></span></span></span></span></span></p>
+<h4 id="step-3-team-b-eaf--1.1">Step 3: Team B (EAF = 1.1)</h4>
+<p>Adjusted Effort:</p>
+<p><span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>E</mi><mi>B</mi></msub><mo>=</mo><mn>294.21</mn><mo>×</mo><mn>1.1</mn><mo>=</mo><mn>323.63</mn> <mi>P</mi><mi>M</mi></mrow><annotation encoding="application/x-tex">
+E_B = 294.21 \times 1.1 = 323.63 \, PM
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.83333em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.328331em;"><span class="" style="top: -2.55em; margin-left: -0.05764em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right: 0.05017em;">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.72777em; vertical-align: -0.08333em;"></span><span class="mord">294.21</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">1.1</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord">323.63</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathnormal" style="margin-right: 0.10903em;">PM</span></span></span></span></span></span></p>
+<p>Development Time:</p>
+<p><span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>T</mi><mrow><mi>d</mi><mi>e</mi><mi>v</mi><mi>B</mi></mrow></msub><mo>=</mo><mn>2.5</mn><mo>×</mo><mo stretchy="false">(</mo><mn>323.63</mn><msup><mo stretchy="false">)</mo><mn>0.35</mn></msup><mo>=</mo><mn>18.89</mn> <mi>M</mi></mrow><annotation encoding="application/x-tex">
+T_{devB} = 2.5 \times (323.63)^{0.35} = 18.89 \, M
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.83333em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.336108em;"><span class="" style="top: -2.55em; margin-left: -0.13889em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">d</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight" style="margin-right: 0.03588em;">v</span><span class="mord mathnormal mtight" style="margin-right: 0.05017em;">B</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.72777em; vertical-align: -0.08333em;"></span><span class="mord">2.5</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 1.11411em; vertical-align: -0.25em;"></span><span class="mopen">(</span><span class="mord">323.63</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.864108em;"><span class="" style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.35</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord">18.89</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathnormal" style="margin-right: 0.10903em;">M</span></span></span></span></span></span></p>
+<p>Average Staff:</p>
+<p><span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>S</mi><mi>t</mi><mi>a</mi><mi>f</mi><msub><mi>f</mi><mi>B</mi></msub><mo>=</mo><mfrac><mn>323.63</mn><mn>18.89</mn></mfrac><mo>≈</mo><mn>17</mn> <mi>p</mi><mi>e</mi><mi>r</mi><mi>s</mi><mi>o</mi><mi>n</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">
+Staff_B = \frac{323.63}{18.89} \approx 17 \, persons
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.88888em; vertical-align: -0.19444em;"></span><span class="mord mathnormal">St</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right: 0.10764em;">f</span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.328331em;"><span class="" style="top: -2.55em; margin-left: -0.10764em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right: 0.05017em;">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 2.00744em; vertical-align: -0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 1.32144em;"><span class="" style="top: -2.314em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord">18.89</span></span></span><span class="" style="top: -3.23em;"><span class="pstrut" style="height: 3em;"></span><span class="frac-line" style="border-bottom-width: 0.04em;"></span></span><span class="" style="top: -3.677em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord">323.63</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.686em;"><span class=""></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.83888em; vertical-align: -0.19444em;"></span><span class="mord">17</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">erso</span><span class="mord mathnormal">n</span><span class="mord mathnormal">s</span></span></span></span></span></span></p>
+<hr>
+<h4 id="step-4-conclusion">Step 4: Conclusion</h4>
+<p><span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mi>r</mi><mi>o</mi><mi>d</mi><mi>u</mi><mi>c</mi><mi>t</mi><mi>i</mi><mi>v</mi><mi>i</mi><mi>t</mi><mi>y</mi><mo>=</mo><mfrac><mrow><mi>K</mi><mi>L</mi><mi>O</mi><mi>C</mi></mrow><mrow><mi>E</mi><mi>f</mi><mi>f</mi><mi>o</mi><mi>r</mi><mi>t</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">
+Productivity = \frac{KLOC}{Effort}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.88888em; vertical-align: -0.19444em;"></span><span class="mord mathnormal" style="margin-right: 0.13889em;">P</span><span class="mord mathnormal">ro</span><span class="mord mathnormal">d</span><span class="mord mathnormal">u</span><span class="mord mathnormal">c</span><span class="mord mathnormal">t</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right: 0.03588em;">v</span><span class="mord mathnormal">i</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right: 0.03588em;">y</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 2.24077em; vertical-align: -0.88044em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 1.36033em;"><span class="" style="top: -2.314em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.05764em;">E</span><span class="mord mathnormal" style="margin-right: 0.10764em;">ff</span><span class="mord mathnormal" style="margin-right: 0.02778em;">or</span><span class="mord mathnormal">t</span></span></span><span class="" style="top: -3.23em;"><span class="pstrut" style="height: 3em;"></span><span class="frac-line" style="border-bottom-width: 0.04em;"></span></span><span class="" style="top: -3.677em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.07153em;">K</span><span class="mord mathnormal">L</span><span class="mord mathnormal" style="margin-right: 0.07153em;">OC</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.88044em;"><span class=""></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></span><br>
+<span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mi>r</mi><mi>o</mi><msub><mi>d</mi><mi>A</mi></msub><mo>=</mo><mfrac><mn>60</mn><mn>264.79</mn></mfrac><mo>≈</mo><mn>0.23</mn> <mi>K</mi><mi>L</mi><mi>O</mi><mi>C</mi><mi mathvariant="normal">/</mi><mi>P</mi><mi>M</mi></mrow><annotation encoding="application/x-tex">
+Prod_A = \frac{60}{264.79} \approx 0.23 \, KLOC/PM
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.84444em; vertical-align: -0.15em;"></span><span class="mord mathnormal" style="margin-right: 0.13889em;">P</span><span class="mord mathnormal">ro</span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.328331em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 2.00744em; vertical-align: -0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 1.32144em;"><span class="" style="top: -2.314em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord">264.79</span></span></span><span class="" style="top: -3.23em;"><span class="pstrut" style="height: 3em;"></span><span class="frac-line" style="border-bottom-width: 0.04em;"></span></span><span class="" style="top: -3.677em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord">60</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.686em;"><span class=""></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord">0.23</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathnormal" style="margin-right: 0.07153em;">K</span><span class="mord mathnormal">L</span><span class="mord mathnormal" style="margin-right: 0.07153em;">OC</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right: 0.10903em;">PM</span></span></span></span></span></span><br>
+<span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mi>r</mi><mi>o</mi><msub><mi>d</mi><mi>B</mi></msub><mo>=</mo><mfrac><mn>60</mn><mn>323.63</mn></mfrac><mo>≈</mo><mn>0.19</mn> <mi>K</mi><mi>L</mi><mi>O</mi><mi>C</mi><mi mathvariant="normal">/</mi><mi>P</mi><mi>M</mi></mrow><annotation encoding="application/x-tex">
+Prod_B = \frac{60}{323.63} \approx 0.19 \, KLOC/PM
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.84444em; vertical-align: -0.15em;"></span><span class="mord mathnormal" style="margin-right: 0.13889em;">P</span><span class="mord mathnormal">ro</span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.328331em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right: 0.05017em;">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 2.00744em; vertical-align: -0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 1.32144em;"><span class="" style="top: -2.314em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord">323.63</span></span></span><span class="" style="top: -3.23em;"><span class="pstrut" style="height: 3em;"></span><span class="frac-line" style="border-bottom-width: 0.04em;"></span></span><span class="" style="top: -3.677em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord">60</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.686em;"><span class=""></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord">0.19</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathnormal" style="margin-right: 0.07153em;">K</span><span class="mord mathnormal">L</span><span class="mord mathnormal" style="margin-right: 0.07153em;">OC</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right: 0.10903em;">PM</span></span></span></span></span></span><br>
+Team A is more efficient with higher productivity (0.23 vs 0.19).</p>
+<h3 id="numerical---2">Numerical - 2</h3>
+<p>Q.  Consider a project having 30,000 LOC written in an embedded environment with high reliability (EAF = 1.15). Calculate the Effort, Development Time, and Team Size.</p>
+<h2 id="section-2"></h2>
+<p><span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mn>30</mn><mo separator="true">,</mo><mn>000</mn> <mi>L</mi><mi>O</mi><mi>C</mi><mo>=</mo><mn>30</mn> <mi>K</mi><mi>L</mi><mi>O</mi><mi>C</mi></mrow><annotation encoding="application/x-tex">
+30,000 \, LOC = 30 \, KLOC
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.87777em; vertical-align: -0.19444em;"></span><span class="mord">30</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord">000</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathnormal">L</span><span class="mord mathnormal" style="margin-right: 0.07153em;">OC</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord">30</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathnormal" style="margin-right: 0.07153em;">K</span><span class="mord mathnormal">L</span><span class="mord mathnormal" style="margin-right: 0.07153em;">OC</span></span></span></span></span></span></p>
+<p><span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mo>=</mo><mn>3.6</mn><mo>×</mo><mo stretchy="false">(</mo><mn>30</mn><msup><mo stretchy="false">)</mo><mn>1.20</mn></msup><mo>×</mo><mn>1.15</mn></mrow><annotation encoding="application/x-tex">
+E = 3.6 \times (30)^{1.20} \times 1.15
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathnormal" style="margin-right: 0.05764em;">E</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.72777em; vertical-align: -0.08333em;"></span><span class="mord">3.6</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 1.11411em; vertical-align: -0.25em;"></span><span class="mopen">(</span><span class="mord">30</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.864108em;"><span class="" style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1.20</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">1.15</span></span></span></span></span></span></p>
+<p><span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mo>=</mo><mn>245.21</mn> <mi>P</mi><mi>M</mi></mrow><annotation encoding="application/x-tex">
+E = 245.21 \, PM
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathnormal" style="margin-right: 0.05764em;">E</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord">245.21</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathnormal" style="margin-right: 0.10903em;">PM</span></span></span></span></span></span><span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>T</mi><mrow><mi>d</mi><mi>e</mi><mi>v</mi></mrow></msub><mo>=</mo><mn>2.5</mn><mo>×</mo><mo stretchy="false">(</mo><mn>245.21</mn><msup><mo stretchy="false">)</mo><mn>0.32</mn></msup></mrow><annotation encoding="application/x-tex">
+T_{dev} = 2.5 \times (245.21)^{0.32}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.83333em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.336108em;"><span class="" style="top: -2.55em; margin-left: -0.13889em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">d</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight" style="margin-right: 0.03588em;">v</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.72777em; vertical-align: -0.08333em;"></span><span class="mord">2.5</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 1.11411em; vertical-align: -0.25em;"></span><span class="mopen">(</span><span class="mord">245.21</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.864108em;"><span class="" style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.32</span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>T</mi><mrow><mi>d</mi><mi>e</mi><mi>v</mi></mrow></msub><mo>=</mo><mn>14.54</mn> <mo>≈</mo><mn>15</mn> <mi>M</mi><mi>o</mi><mi>n</mi><mi>t</mi><mi>h</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">
+T_{dev} = 14.54 \, \approx 15 \, Months
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.83333em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.336108em;"><span class="" style="top: -2.55em; margin-left: -0.13889em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">d</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight" style="margin-right: 0.03588em;">v</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">14.54</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.69444em; vertical-align: 0em;"></span><span class="mord">15</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathnormal" style="margin-right: 0.10903em;">M</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mord mathnormal">s</span></span></span></span></span></span><span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>T</mi><mi>e</mi><mi>a</mi><mi>m</mi> <mi>S</mi><mi>i</mi><mi>z</mi><mi>e</mi><mo>=</mo><mfrac><mrow><mi>E</mi><mi>f</mi><mi>f</mi><mi>o</mi><mi>r</mi><mi>t</mi></mrow><msub><mi>T</mi><mrow><mi>d</mi><mi>e</mi><mi>v</mi></mrow></msub></mfrac></mrow><annotation encoding="application/x-tex">
+Team \, Size = \frac{Effort}{T_{dev}}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathnormal" style="margin-right: 0.13889em;">T</span><span class="mord mathnormal">e</span><span class="mord mathnormal">am</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathnormal" style="margin-right: 0.05764em;">S</span><span class="mord mathnormal">i</span><span class="mord mathnormal">ze</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 2.20744em; vertical-align: -0.836em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 1.37144em;"><span class="" style="top: -2.314em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right: 0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.336108em;"><span class="" style="top: -2.55em; margin-left: -0.13889em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">d</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight" style="margin-right: 0.03588em;">v</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span></span></span><span class="" style="top: -3.23em;"><span class="pstrut" style="height: 3em;"></span><span class="frac-line" style="border-bottom-width: 0.04em;"></span></span><span class="" style="top: -3.677em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right: 0.05764em;">E</span><span class="mord mathnormal" style="margin-right: 0.10764em;">ff</span><span class="mord mathnormal" style="margin-right: 0.02778em;">or</span><span class="mord mathnormal">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.836em;"><span class=""></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></span></p>
+<p><span class="katex--display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>T</mi><mi>e</mi><mi>a</mi><mi>m</mi> <mi>S</mi><mi>i</mi><mi>z</mi><mi>e</mi><mo>=</mo><mfrac><mn>245.21</mn><mn>14.54</mn></mfrac><mo>≈</mo><mn>16.86</mn> <mo>≈</mo><mn>17</mn> <mi>p</mi><mi>e</mi><mi>r</mi><mi>s</mi><mi>o</mi><mi>n</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">
+Team \, Size = \frac{245.21}{14.54} \approx 16.86 \, \approx 17 \, persons
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathnormal" style="margin-right: 0.13889em;">T</span><span class="mord mathnormal">e</span><span class="mord mathnormal">am</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathnormal" style="margin-right: 0.05764em;">S</span><span class="mord mathnormal">i</span><span class="mord mathnormal">ze</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 2.00744em; vertical-align: -0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 1.32144em;"><span class="" style="top: -2.314em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord">14.54</span></span></span><span class="" style="top: -3.23em;"><span class="pstrut" style="height: 3em;"></span><span class="frac-line" style="border-bottom-width: 0.04em;"></span></span><span class="" style="top: -3.677em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord">245.21</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.686em;"><span class=""></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">16.86</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.83888em; vertical-align: -0.19444em;"></span><span class="mord">17</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">erso</span><span class="mord mathnormal">n</span><span class="mord mathnormal">s</span></span></span></span></span></span></p>
+<h3 id="final-answer">Final Answer</h3>
+<ul>
+<li>Effort = <strong>245.21 PM</strong></li>
+<li>Development Time = <strong>15 Months</strong></li>
+<li>Team Size = <strong>17 persons</strong></li>
+</ul>
 </div>
 
 
